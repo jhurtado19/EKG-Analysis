@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+def averageGreater(array, lim):
+  plt.plot(array)
+  sum = 0
+  length = 0
+  i = 1
+  print(f"Peak values greater than {lim}")
+  while i < len(array) - 1:
+    if array[i] > lim and array[i] >= array[i-1] and array[i] >= array[i+1]:
+      print(array[i])
+      plt.vlines(i,8000,-4000)
+      sum += array[i]
+      length += 1
+      while array[i] == array[i+1]:
+        i += 1
+    i += 1
+  print(f"Average: {sum / length}")
